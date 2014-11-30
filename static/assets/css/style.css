@@ -21,7 +21,7 @@ h6 { font-weight: 300 }
 a { color: #2d2d2d }
 a:hover,
 a:focus {
-  color: #0c86b6;
+  color: #551645;
   text-decoration: none;
 }
 .hiding { opacity: 0 }
@@ -43,14 +43,14 @@ a:focus {
       -ms-transition: all .2s;
           transition: all .2s;
 }
-.btn-blue {
+.btn-apm {
   color: #fff;
-  background-color: #0093cf;
+  background-color: #551645;
 }
-.btn-blue:hover,
-.btn-blue:focus {
+.btn-apm:hover,
+.btn-apm:focus {
   color: #fff;
-  background-color: #2a3940;
+  background-color: #2f1c2a;
 }
 .btn-green {
   color: #fff;
@@ -108,7 +108,7 @@ a:focus {
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  color: #0093cf;
+  color: #551645;
   background-color: transparent;
 }
 .navbar-default .navbar-toggle { border-color: transparent }
@@ -135,7 +135,7 @@ a:focus {
   width: 80px;
   height: 2px;
   margin: 0 auto;
-  background-color: #71be3c;
+  background-color: #551645;
 }
 .page .heading p { margin: 20px auto 0 }
 #home {
@@ -161,7 +161,7 @@ a:focus {
   border-bottom: solid 1px #e7e7e7;
 }
 #services .service i { margin-top: 60px }
-#services .service:hover i { color: #71be3c }
+#services .service:hover i { color: #551645 }
 #work .heading p { margin-bottom: 60px }
 #portfolio { width: 100% }
 #portfolio .filters { margin-bottom: 20px }
