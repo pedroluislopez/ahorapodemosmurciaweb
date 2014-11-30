@@ -9,6 +9,7 @@ class Candidato(models.Model):
     imagen = models.ImageField('Imagen', upload_to='profile_images', blank=True)
     secretario = models.BooleanField('Secretario General', default=False)
     consejo = models.BooleanField('Consejo Ciudadano', default=False)
+    descripcion_corta = models.CharField('Descripción corta', max_length=50)
     motivacion = models.TextField('Motivación', max_length=1000, blank=True)
     orden = models.IntegerField('Orden')
     
@@ -27,4 +28,49 @@ class Candidato(models.Model):
             return 'Consejo ciudadano'
         else:
             return ''
+    
+class IdeaFuerza(models.Model):
+    SECCION_CHOICES = (
+        ('m', 'Método'),
+        ('p', 'Podemos Murcia'),
+        ('a', 'Ayuntamiento'),
+    )
+    
+    titulo = models.CharField('Título', max_length=50)
+    seccion = models.CharField('Sección', max_length=2, choices=SECCION_CHOICES)
+    icono = models.CharField('Icono', max_length=20)
+    descripcion = models.TextField('Descripción', max_length=500)
+    orden = models.IntegerField('Orden')
+    
+    def __unicode__(self):
+        return self.seccion + ': ' + self.titulo
+    
+class Cita(models.Model):
+    candidato = models.ForeignKey(Candidato)
+    cita = models.TextField('Cita', max_length=500)
+    orden = models.IntegerField('Orden')
+    
+    def __unicode__(self):
+        return str(self.candidato) + ' ' + str(self.orden)
+    
+class Documento(models.Model):
+    CATEGORIA_CHOICES = (
+        ('d', 'Documento'),
+        ('o', 'Octavilla'),
+        ('s', 'Sin categoría')
+    )
+    
+    nombre = models.CharField('Nombre', max_length=50)
+    categoria = models.CharField('Categoría', max_length=2, choices=CATEGORIA_CHOICES)
+    imagen =  models.ImageField('Imagen', upload_to='document_images')
+    documento = models.FileField('Documento', upload_to='document_documents', blank=True)
+    orden = models.IntegerField('Orden')
+    
+    def __unicode__(self):
+        return self.nombre
+    
+    def get_documento(self):
+        if not self.documento:
+            return self.imagen.url
+        return self.documento.url
     

@@ -156,12 +156,12 @@ a:focus {
   margin-top: 20px;
   margin-bottom: 0;
 }
-#services {
+#metodo, #podemos, #municipio {
   background-color: #f5f5f5;
   border-bottom: solid 1px #e7e7e7;
 }
-#services .service i { margin-top: 60px }
-#services .service:hover i { color: #551645 }
+#metodo .service i, #podemos .service i, #municipio .service i { margin-top: 60px }
+#metodo .service:hover i, #podemos .service:hover i, #municipio .service:hover i { color: #551645 }
 #work .heading p { margin-bottom: 60px }
 #portfolio { width: 100% }
 #portfolio .filters { margin-bottom: 20px }
@@ -172,13 +172,14 @@ a:focus {
 }
 #portfolio .filters li a:hover,
 #portfolio .filters li a:focus { color: #333 }
-#portfolio .filters li a.active { color: #0093cf }
+#portfolio .filters li a.active { color: #551645 }
 #portfolio .items { margin-bottom: 0 }
 #portfolio .items li {
   position: relative;
   float: left;
   width: 25%;
   overflow: hidden;
+  margin-right: 10px;
 }
 #portfolio .items li a img {
   width: 100%;
@@ -216,7 +217,7 @@ a:focus {
        -o-transform: scale(1.1);
           transform: scale(1.1);
 }
-#clients {
+#citas {
   color: #fff;
   background-color: #2a3940;
 }
@@ -249,7 +250,7 @@ a:focus {
   width: 9px;
   height: 9px;
   margin: 1px;
-  background-color: #71be3c;
+  background-color: #551645;
   border-color: #fff;
 }
 #testimonials .carousel-indicators {
