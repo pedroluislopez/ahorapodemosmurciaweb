@@ -266,6 +266,60 @@ a:focus {
   background-image: none;
   text-shadow: none;
 }
+#prensa {
+  color: #fff;
+  background-color: #2a3940;
+}
+#news .item { margin-bottom: 30px }
+#news .quote {
+  padding: 0 90px;
+  font-size: 16px;
+}
+#news .quote a, #news .quote a:hover {
+  color: #fff;
+}
+#news .quote a:hover {
+  text-decoration: underline;
+}
+#news .quote:before {
+  margin-right: 10px;
+  font-family: fontawesome;
+  content: '\f10d';
+}
+#news .client { color: #ccc }
+#news .carousel-indicators li {
+  width: 9px;
+  height: 9px;
+  border-color: #a6a6a6;
+  -webkit-border-radius: 2px;
+     -moz-border-radius: 2px;
+          border-radius: 2px;
+  -webkit-transition: all 0.25s linear;
+     -moz-transition: all 0.25s linear;
+       -o-transition: all 0.25s linear;
+          transition: all 0.25s linear;
+}
+#news .carousel-indicators li:hover,
+#news .carousel-indicators li:focus { border-color: #fff }
+#news .carousel-indicators .active {
+  width: 9px;
+  height: 9px;
+  margin: 1px;
+  background-color: #551645;
+  border-color: #fff;
+}
+#news .carousel-indicators {
+  bottom: 0;
+  margin-bottom: 0;
+}
+#news .carousel-control {
+  top: 15%;
+  width: 0%;
+  display: none;
+  font-size: 40px;
+  background-image: none;
+  text-shadow: none;
+}
 #about .content { padding-bottom: 0 }
 #about .teammate { 
   margin-top: 60px; 

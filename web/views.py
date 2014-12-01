@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from web.models import Candidato, IdeaFuerza, Cita, Documento
+from web.models import Candidato, IdeaFuerza, Cita, Documento, Noticia
 
 # Create your views here.
 def index(request):
@@ -18,6 +18,7 @@ def index(request):
     citas = Cita.objects.order_by('orden')
     candidatos = Candidato.objects.order_by('orden')
     documentos = Documento.objects.order_by('orden')
+    noticias = Noticia.objects.order_by('-fecha')
     return render(request, 'index.html', {
         'ideasfuerza_m': ideasfuerza_m,
         'm_columns': m_columns,
@@ -28,4 +29,5 @@ def index(request):
         'citas': citas,
         'candidatos': candidatos,
         'documentos': documentos,
+        'noticias': noticias,
     })

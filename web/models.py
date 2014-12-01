@@ -79,3 +79,13 @@ class Documento(models.Model):
             return self.imagen.url
         return self.documento.url
     
+class Noticia(models.Model):
+    titular = models.CharField('Titular', max_length=255)
+    resumen = models.TextField('Resumen', max_length=1000)
+    enlace = models.CharField('Enlace', max_length=255)
+    diario = models.CharField('Diario', max_length=50)
+    fecha = models.DateField('Fecha')
+    
+    def __unicode__(self):
+        return self.diario + ': ' + self.titular
+    

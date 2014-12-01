@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from web.models import Candidato, IdeaFuerza, Cita, Documento
+from web.models import Candidato, IdeaFuerza, Cita, Documento, Noticia
 
 
 # Register your models here.
@@ -27,8 +27,13 @@ class CitaAdmin(admin.ModelAdmin):
 class DocumentoAdmin(admin.ModelAdmin):
     list_display = ('nombre', 'categoria', 'orden')
     ordering = ['categoria', 'orden']
+    
+class NoticiaAdmin(admin.ModelAdmin):
+    list_display = ('titular', 'diario', 'fecha')
+    ordering = ['-fecha']
 
 admin.site.register(Candidato, CandidatoAdmin)
 admin.site.register(IdeaFuerza, IdeaFuerzaAdmin)
 admin.site.register(Cita, CitaAdmin)
 admin.site.register(Documento, DocumentoAdmin)
+admin.site.register(Noticia, NoticiaAdmin)
