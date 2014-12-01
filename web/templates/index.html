@@ -192,7 +192,7 @@
                 <p>{{ c.motivacion }}</p>
               </div>
             </div>
-          {% if forloop.counter1|divisibleby:4 %}
+          {% if forloop.counter|divisibleby:4 %}
           </div>
           {% endif %}
           {% endfor %}
