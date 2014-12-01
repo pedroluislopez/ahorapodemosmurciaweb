@@ -92,7 +92,7 @@
           	{% for ideafuerza in ideasfuerza_m %}
             <div class="col-lg-{{ m_columns }} service animated hiding" data-animation="fadeInUp" data-delay="300">
               <i class="fa fa-{{ ideafuerza.icono }} fa-5x"></i>
-              <h3><a href="#">{{ ideafuerza.titulo | escape }}</a></h3>
+              <h3>{{ ideafuerza.titulo | escape }}</h3>
               <p>{{ ideafuerza.descripcion | escape }}</p>
             </div>
             {% endfor %}
@@ -106,14 +106,14 @@
           <div class="heading">
             <h2>Consejo Ciudadano de Podemos Murcia. Organizaci&oacute;n</h2>
             <div class="border"></div>
-            <p>Fruto de la colaboración y la cooperación, porque no decirlo, a nivel estatal con el foco puesto en la participación y en la toma de decisiones en los círculos territoriales y sectoriales, además de herramientas enfocadas a la cooperación con la ciudadanía y los movimientos sociales.</p>
+            <p>Fruto de la colaboración y la cooperación también a nivel estatal, con el foco puesto en la participación y en la toma de decisiones en los círculos territoriales y sectoriales, además de herramientas enfocadas a la cooperación con la ciudadanía y los movimientos sociales.</p>
             <p>Puedes consultar nuestro documento organizativo <strong><a href="/media/document_documents/Documento-organizativo-Ahora-Podemos.pdf">aqu&iacute;</a></strong>.</p>
           </div>
           <div class="row">
           	{% for ideafuerza in ideasfuerza_p %}
             <div class="col-lg-{{ p_columns }} service animated hiding" data-animation="fadeInUp" data-delay="300">
               <i class="fa fa-{{ ideafuerza.icono }} fa-5x"></i>
-              <h3><a href="#">{{ ideafuerza.titulo | escape }}</a></h3>
+              <h3>{{ ideafuerza.titulo | escape }}</h3>
               <p>{{ ideafuerza.descripcion | escape }}</p>
             </div>
             {% endfor %}
@@ -134,7 +134,7 @@
           	{% for ideafuerza in ideasfuerza_a %}
             <div class="col-lg-{{ a_columns }} service animated hiding" data-animation="fadeInUp" data-delay="300">
               <i class="fa fa-{{ ideafuerza.icono }} fa-5x"></i>
-              <h3><a href="#">{{ ideafuerza.titulo | escape }}</a></h3>
+              <h3>{{ ideafuerza.titulo | escape }}</h3>
               <p>{{ ideafuerza.descripcion | escape }}</p>
             </div>
             {% endfor %}

@@ -9,12 +9,12 @@ def index(request):
         m_columns = 12 / len(ideasfuerza_m)
     ideasfuerza_p = IdeaFuerza.objects.filter(seccion='p').order_by('orden')
     p_columns = 0
-    if len(ideasfuerza_m) > 0:
-        p_columns = 12 / len(ideasfuerza_m)
+    if len(ideasfuerza_p) > 0:
+        p_columns = 12 / len(ideasfuerza_p)
     ideasfuerza_a = IdeaFuerza.objects.filter(seccion='a').order_by('orden')
     a_columns = 0
-    if len(ideasfuerza_m) > 0:
-        a_columns = 12 / len(ideasfuerza_m)
+    if len(ideasfuerza_a) > 0:
+        a_columns = 12 / len(ideasfuerza_a)
     citas = Cita.objects.order_by('orden')
     candidatos = Candidato.objects.order_by('orden')
     documentos = Documento.objects.order_by('orden')
