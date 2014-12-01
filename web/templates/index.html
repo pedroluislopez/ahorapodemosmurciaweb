@@ -30,7 +30,7 @@
           <div class="row">
             <div class="col-lg-12">
               <h1 class="animated hiding" data-animation="fadeInDown" data-delay="300">Ahora Podemos Murcia</h1>
-              <a class="btn btn-apm nav-external animated hiding" data-animation="fadeIn" data-delay="900" href="#metodo">Plural&iacute;zate</a>
+              <a class="btn btn-apm nav-external animated hiding" data-animation="fadeIn" data-delay="900" href="#metodo">Empod&eacute;rate</a>
               <h3 class="animated hiding" data-animation="fadeIn" data-delay="600">Candidatura plural, participativa y abierta para el Consejo Ciudadano de Podemos en el Municipio de Murcia.</h3>
             </div>
           </div>
@@ -190,6 +190,38 @@
                 <h5>{{ c.descripcion_corta}}</h5>
                 <div class="border"></div>
                 <p>{{ c.motivacion }}</p>
+                {% if c.blog or c.facebook or c.twitter or c.youtube %}
+                <ul class="list-inline">
+                  {% if c.blog %}
+                  <li>
+                    <a href="{{ c.blog }}" title="Blog" target="blank_">
+                      <i class="fa fa-pencil"></i>
+                    </a>
+                  </li>
+                  {% endif %}
+                  {% if c.facebook %}
+                  <li>
+                    <a href="{{ c.facebook }}" title="Facebook" target="blank_">
+                      <i class="fa fa-facebook"></i>
+                    </a>
+                  </li>
+                  {% endif %}
+                  {% if c.twitter %}
+                  <li>
+                    <a href="{{ c.twitter }}" title="Twitter" target="blank_">
+                      <i class="fa fa-twitter"></i>
+                    </a>
+                  </li>
+                  {% endif %}
+                  {% if c.youtube %}
+                  <li>
+                    <a href="{{ c.youtube }}" title="Vídeo" target="blank_">
+                      <i class="fa fa-youtube-play"></i>
+                    </a>
+                  </li>
+                  {% endif %}
+                </ul>
+                {% endif %}
               </div>
             </div>
           {% if forloop.counter|divisibleby:4 %}

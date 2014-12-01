@@ -7,14 +7,15 @@ from web.models import Candidato, IdeaFuerza, Cita, Documento
 class CandidatoAdmin(admin.ModelAdmin):
     fieldsets = [
         (None, {'fields': ['nombre', 'apellidos', 'orden', 'imagen']}),
-        ('Candidatura', {'fields': ['secretario', 'consejo', 'descripcion_corta', 'motivacion']}),
+        ('Candidatura', {'fields': ['secretario', 'consejo', 'descripcion_corta', 'motivacion', 'podemos']}),
+        ('Redes sociales', {'fields': ['blog', 'facebook', 'twitter', 'youtube']})
     ]
     list_display = ('nombre', 'apellidos', 'secretario', 'consejo')
     ordering = ['orden']
     
 class IdeaFuerzaAdmin(admin.ModelAdmin):
-    list_display = ('titulo', 'seccion', 'icono')
-    ordering = ['orden']
+    list_display = ('titulo', 'icono', 'seccion', 'orden')
+    ordering = ['seccion', 'orden']
     
 class CitaAdmin(admin.ModelAdmin):
     list_display = ('get_candidato', 'orden')
@@ -24,8 +25,8 @@ class CitaAdmin(admin.ModelAdmin):
         return str(obj.candidato)
     
 class DocumentoAdmin(admin.ModelAdmin):
-    list_display = ('nombre', 'categoria')
-    ordering = ['orden']
+    list_display = ('nombre', 'categoria', 'orden')
+    ordering = ['categoria', 'orden']
 
 admin.site.register(Candidato, CandidatoAdmin)
 admin.site.register(IdeaFuerza, IdeaFuerzaAdmin)

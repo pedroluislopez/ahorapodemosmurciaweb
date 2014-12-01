@@ -9,9 +9,14 @@ class Candidato(models.Model):
     imagen = models.ImageField('Imagen', upload_to='profile_images', blank=True)
     secretario = models.BooleanField('Secretario General', default=False)
     consejo = models.BooleanField('Consejo Ciudadano', default=False)
-    descripcion_corta = models.CharField('Descripción corta', max_length=50)
+    descripcion_corta = models.CharField('Descripción corta', max_length=100)
     motivacion = models.TextField('Motivación', max_length=1000, blank=True)
     orden = models.IntegerField('Orden')
+    podemos = models.CharField('Perfil de Podemos', max_length=255, blank=True, default='')
+    blog = models.CharField('Blog', max_length=255, blank=True, default='')
+    facebook = models.CharField('Facebook', max_length=255, blank=True, default='')
+    twitter = models.CharField('Twitter', max_length=255, blank=True, default='')
+    youtube = models.CharField('Youtube', max_length=255, blank=True, default='')
     
     def __unicode__(self):
         return self.nombre + ' ' + self.apellidos
