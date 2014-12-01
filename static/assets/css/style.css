@@ -180,6 +180,7 @@ a:focus {
   width: 25%;
   overflow: hidden;
   margin-right: 10px;
+  margin-bottom: 10px;
 }
 #portfolio .items li a img {
   width: 100%;

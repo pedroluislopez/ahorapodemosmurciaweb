@@ -86,12 +86,11 @@
           <div class="heading">
             <h2>Ahora Podemos Murcia. Nuestro m&eacute;todo</h2>
             <div class="border"></div>
-            <p>Una candidatura para el Consejo Ciudadano de Podemos en Murcia plural, participita y abierta; elegida a trav&eacute;s de unas primarias no oficiales.<br/>
-            Pod&eacute;is consultar nuestro documento pol&iacute;tico <strong><a href="#">aqu&iacute;</a></strong> y nuestro documento organizativo <strong><a href="#">aqu&iacute;</a></strong>.</p>
+            <p>Candidatura plural, participativa y abierta para el Consejo Ciudadano de Podemos en el Municipio de Murcia.</p>
           </div>
           <div class="row">
           	{% for ideafuerza in ideasfuerza_m %}
-            <div class="col-lg-3 service animated hiding" data-animation="fadeInUp" data-delay="300">
+            <div class="col-lg-{{ m_columns }} service animated hiding" data-animation="fadeInUp" data-delay="300">
               <i class="fa fa-{{ ideafuerza.icono }} fa-5x"></i>
               <h3><a href="#">{{ ideafuerza.titulo | escape }}</a></h3>
               <p>{{ ideafuerza.descripcion | escape }}</p>
@@ -107,12 +106,12 @@
           <div class="heading">
             <h2>Consejo Ciudadano de Podemos Murcia. Organizaci&oacute;n</h2>
             <div class="border"></div>
-            <p>Una candidatura para el Consejo Ciudadano de Podemos en Murcia plural, participita y abierta; elegida a trav&eacute;s de unas primarias no oficiales.<br/>
-            Pod&eacute;is consultar nuestro documento pol&iacute;tico <strong><a href="#">aqu&iacute;</a></strong> y nuestro documento organizativo <strong><a href="#">aqu&iacute;</a></strong>.</p>
+            <p>Fruto de la colaboración y la cooperación, porque no decirlo, a nivel estatal con el foco puesto en la participación y en la toma de decisiones en los círculos territoriales y sectoriales, además de herramientas enfocadas a la cooperación con la ciudadanía y los movimientos sociales.</p>
+            <p>Puedes consultar nuestro documento organizativo <strong><a href="/media/document_documents/Documento-organizativo-Ahora-Podemos.pdf">aqu&iacute;</a></strong>.</p>
           </div>
           <div class="row">
           	{% for ideafuerza in ideasfuerza_p %}
-            <div class="col-lg-3 service animated hiding" data-animation="fadeInUp" data-delay="300">
+            <div class="col-lg-{{ p_columns }} service animated hiding" data-animation="fadeInUp" data-delay="300">
               <i class="fa fa-{{ ideafuerza.icono }} fa-5x"></i>
               <h3><a href="#">{{ ideafuerza.titulo | escape }}</a></h3>
               <p>{{ ideafuerza.descripcion | escape }}</p>
@@ -128,12 +127,12 @@
           <div class="heading">
             <h2>Líneas pol&iacute;ticas para el Municipio de Murcia</h2>
             <div class="border"></div>
-            <p>Una candidatura para el Consejo Ciudadano de Podemos en Murcia plural, participita y abierta; elegida a trav&eacute;s de unas primarias no oficiales.<br/>
-            Pod&eacute;is consultar nuestro documento pol&iacute;tico <strong><a href="#">aqu&iacute;</a></strong> y nuestro documento organizativo <strong><a href="#">aqu&iacute;</a></strong>.</p>
+            <p><i>«Para alcanzar el poder popular ya comentado hay que llevar a cabo tareas concretas como el diálogo con las organizaciones sociales, no solo para solidarizarse con ellas, sino para recoger sus experiencias de cara a la elaboración de una alternativa de gobierno. Las mareas Blanca y Verde, la PAH o la Plataforma Pro-Soterramiento tienen una valiosa experiencia que debería ser la base de unas políticas públicas al servicio del conjunto de la sociedad. Es necesario generar vínculos entre las fuerzas vivas de los barrios y las pedanías, visibilizar problemas ignorados hasta el momento por las autoridades, construir espacios sociales de encuentro abierto para todos los vecinos. Podemos en el municipio debe ser un mecanismo para la formación política de una ciudadanía que necesita aprender en común a gobernarse a sí misma.»</i></p>
+            <p>Puedes consultar nuestro documento pol&iacute;tico <strong><a href="/media/document_documents/Documento-Politico-Ahora-Podemos-Murcia.pdf">aqu&iacute;</a></strong>.</p>
           </div>
           <div class="row">
           	{% for ideafuerza in ideasfuerza_a %}
-            <div class="col-lg-3 service animated hiding" data-animation="fadeInUp" data-delay="300">
+            <div class="col-lg-{{ a_columns }} service animated hiding" data-animation="fadeInUp" data-delay="300">
               <i class="fa fa-{{ ideafuerza.icono }} fa-5x"></i>
               <h3><a href="#">{{ ideafuerza.titulo | escape }}</a></h3>
               <p>{{ ideafuerza.descripcion | escape }}</p>
@@ -176,7 +175,7 @@
           <div class="heading">
             <h2>Un equipo para todxs.</h2>
             <div class="border"></div>
-            <p>(Descripci&oacuten molona para esta secci&oacute;n).</p>
+            <p>Un equipo plural, participativo y abierto; fruto de unas éxitosas primarias no oficiales donde participaron 266 personas.</p>
           </div>
           <div class="row">
             {% for c in candidatos %}
@@ -252,7 +251,7 @@
                 <ul class="items list-unstyled clearfix animated hiding" data-animation="fadeInRight">
                   {% for d in documentos %}
                   <li class="item {{ d.categoria }}">
-                    <a href="{{ d.get_documento }}">
+                    <a href="{{ d.get_documento }}" target="blank_">
                       <img src="{{ d.imagen.url }}" alt="">
                       <div class="overlay">
                         <span>{{ d.nombre }}</span>
