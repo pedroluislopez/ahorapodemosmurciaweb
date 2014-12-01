@@ -177,8 +177,10 @@
             <div class="border"></div>
             <p>Un equipo plural, participativo y abierto; fruto de unas éxitosas primarias no oficiales donde participaron 266 personas.</p>
           </div>
+          {% for c in candidatos %}
+          {% if forloop.counter0|divisibleby:4 %}
           <div class="row">
-            {% for c in candidatos %}
+          {% endif %}
             <div class="col-md-3 col-sm-6 col-xs-12 teammate animated hiding" data-animation="fadeInLeft" data-delay="600">
               <div class="profile-photo">
                 <img class="img-responsive" src="{{ c.get_imagen }}" alt="">
@@ -190,8 +192,10 @@
                 <p>{{ c.motivacion }}</p>
               </div>
             </div>
-            {% endfor %}
+          {% if forloop.counter0|divisibleby:4 %}
           </div>
+          {% endif %}
+          {% endfor %}
         </div>
       </div>
       <div class="twitter text-center">
