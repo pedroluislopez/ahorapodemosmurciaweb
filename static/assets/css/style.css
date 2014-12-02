@@ -200,7 +200,8 @@ a:focus {
   border-bottom: solid 1px #e7e7e7;
 }
 #metodo .service i, #podemos .service i, #municipio .service i { margin-top: 60px }
-#metodo .service:hover i, #podemos .service:hover i, #municipio .service:hover i { color: #551645 }
+#metodo .service:hover i, #podemos .service:hover i { color: #551645 }
+#municipio .service:hover i { color: #333 }
 #work .heading p { margin-bottom: 60px }
 #portfolio { width: 100% }
 #portfolio .filters { margin-bottom: 20px }
