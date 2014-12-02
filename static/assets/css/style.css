@@ -6,6 +6,28 @@ By: Hasan Alibegic, hasan461@gmail.com
 License: Apache License v2.0
 
 */
+
+@font-face {
+  font-family: 'Gotham-Black';
+  src: url('../fonts/Gotham-Black.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham-Medium';
+  src: url('../fonts/Gotham-Medium.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham-Light';
+  src: url('../fonts/Gotham-Light.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   font-family: 'Source Sans Pro', sans-serif;
   color: #444;
@@ -140,7 +162,7 @@ a:focus {
 .page .heading p { margin: 20px auto 0 }
 #home {
   padding: 0;
-  color: #fff;
+  color: #551645;
   background-image: url(../img/cover/home.jpg);
   background-repeat: no-repeat;
   background-position: center center;
@@ -151,13 +173,30 @@ a:focus {
   margin-bottom: 20px;
   font-size: 60px;
 }
+#home h1 .ahora {
+	font-family: Gotham-Medium;
+}
+#home h1 .podemos {
+	font-family: Gotham-Black;
+	text-transform: uppercase;
+}
+#home h1 .murcia {
+	font-family: Gotham-Light;
+	text-transform: uppercase;
+}
 #home a { margin: 0 5px }
 #home h3 {
   margin-top: 20px;
   margin-bottom: 0;
+  font-size: 30px;
+  font-family: Gotham-Light;
 }
+#metodo { background-color: #efe6ec }
+#podemos { background-color: #dcc5d6 }
+#municipio { background-color: #bf97b1 }
+#municipio, #municipio a { color: #551645 }
+#municipio a:hover, #municipio a:focus, #municipio a.active { color: #333 }
 #metodo, #podemos, #municipio {
-  background-color: #f5f5f5;
   border-bottom: solid 1px #e7e7e7;
 }
 #metodo .service i, #podemos .service i, #municipio .service i { margin-top: 60px }
@@ -220,7 +259,7 @@ a:focus {
 }
 #citas {
   color: #fff;
-  background-color: #2a3940;
+  background-color: #551645;
 }
 #testimonials .item { margin-bottom: 30px }
 #testimonials .quote {
@@ -251,7 +290,7 @@ a:focus {
   width: 9px;
   height: 9px;
   margin: 1px;
-  background-color: #6d365d;
+  background-color: #e8dde5;
   border-color: #fff;
 }
 #testimonials .carousel-indicators {
@@ -268,10 +307,10 @@ a:focus {
 }
 #prensa {
   color: #fff;
-  background-color: #2a3940;
+  background-color: #076259;
 }
 #prensa .border {
-	background-color: #6d365d;
+	background-color: #7abcb0;
 }
 #news .item { margin-bottom: 30px }
 #news .quote {
@@ -308,7 +347,7 @@ a:focus {
   width: 9px;
   height: 9px;
   margin: 1px;
-  background-color: #6d365d;
+  background-color: #7abcb0;
   border-color: #fff;
 }
 #news .carousel-indicators {
@@ -377,15 +416,17 @@ a:focus {
 #contact,
 #contact a,
 #contact a:hover,
-#contact a:focus { color: #fff }
-#contact .heading .border { background-color: #fff }
+#contact a:focus { color: #444 }
+#contact a:hover,
+#contact a:focus { text-decoration: underline }
+#contact .heading .border { background-color: #551645 }
 #contact a { display: block }
 #contact i { margin: 60px 0 15px }
 #footer {
   padding: 40px 0;
   color: #ccc;
   text-align: center;
-  background-color: #2a3940;
+  background-color: #551645;
 }
 #footer a,
 #footer a:hover,
