@@ -251,7 +251,7 @@ a:focus {
   width: 9px;
   height: 9px;
   margin: 1px;
-  background-color: #551645;
+  background-color: #6d365d;
   border-color: #fff;
 }
 #testimonials .carousel-indicators {
@@ -269,6 +269,9 @@ a:focus {
 #prensa {
   color: #fff;
   background-color: #2a3940;
+}
+#prensa .border {
+	background-color: #6d365d;
 }
 #news .item { margin-bottom: 30px }
 #news .quote {
@@ -305,7 +308,7 @@ a:focus {
   width: 9px;
   height: 9px;
   margin: 1px;
-  background-color: #551645;
+  background-color: #6d365d;
   border-color: #fff;
 }
 #news .carousel-indicators {
