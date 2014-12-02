@@ -22,7 +22,7 @@ class CitaAdmin(admin.ModelAdmin):
     ordering = ['orden']
     
     def get_candidato(self, obj):
-        return str(obj.candidato)
+        return obj.candidato
     
 class DocumentoAdmin(admin.ModelAdmin):
     list_display = ('nombre', 'categoria', 'orden')

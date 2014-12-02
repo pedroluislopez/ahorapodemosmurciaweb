@@ -56,7 +56,7 @@ class Cita(models.Model):
     orden = models.IntegerField('Orden')
     
     def __unicode__(self):
-        return str(self.candidato) + ' ' + str(self.orden)
+        return u'%s %d' % (self.candidato, self.orden)
     
 class Documento(models.Model):
     CATEGORIA_CHOICES = (
