@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% load comments %}
+
+{% block title %} Blog.{% endblock %}
+
+{% block button %}#blog{% endblock %}
+
+{% block a-menu-class %}external{% endblock %}
+
+{% block content %}
+<section id="blog" class="page">
+  <div class="container">
+    <div class="content">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          {% for p in publicaciones %}
+		  <article class="clearfix">
+		    <div class="post-date">
+		      {% get_comment_count for blog.Publicacion p.id as comment_count %}
+		      {{ p.publicado|date:"d \d\e F \d\e Y" }} <span><a href="{% url 'blog-post' p.slug %}#comments">{{ comment_count }} Comentario/s</a></span>
+		    </div>		
+		    <h2><a href="{% url 'blog-post' p.slug %}#blog">{{ p.titulo|escape }}</a></h2>
+		    <p>{{ p.entradilla|escape }} <a href="{% url 'blog-post' p.slug %}#blog">Leer m&aacute;s</a>
+		    </p>
+		  </article>
+		  {% endfor %}
+		  <div class="paging clearfix">
+		    {% if num_prev %}
+	        <a class="btn pull-left" href="{% url 'blog-index' num_prev %}#blog">
+	          <i class="fa fa-arrow-left fa-1x"></i>
+	          <span>Entradas recientes</span>
+	        </a>
+	        {% endif %}
+	        {% if num_next %}
+	        <a class="btn pull-right" href="{% url 'blog-index' num_next %}#blog">
+	          <span>Entradas antiguas</span>
+	          <i class="fa fa-arrow-right fa-1x"></i>
+	        </a>
+	        {% endif %}
+	      </div>
+		</div>
+    </div>
+  </div>
+</section>
+{% endblock %}

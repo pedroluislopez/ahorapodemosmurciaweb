@@ -1,0 +1,162 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ahora Podemos Murcia. Un equipo para todxs. Candidatura plural, participativa y abierta para el Consejo Ciudadano de Podemos en el Municipio de Murcia.">
+    <meta name="author" content="Ahora Podemos Murcia">
+    <link rel="shortcut icon" href="{% static "assets/ico/favicon.ico" %}">
+    <title>Ahora Podemos Murcia. Un equipo para todxs. {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600">
+    <link rel="stylesheet" href="{% static "assets/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/style.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/animate.min.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/font-awesome.min.css" %}">
+    <!--[if lt IE 9]>
+    <script src="{% static "assets/js/html5shiv.js" %}"></script>
+    <script src="{% static "assets/js/respond.min.js" %}"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <link rel="image_src" href="{% static "assets/img/cover/home-link.jpg" %}">
+    {% block loader %}{% endblock %}
+    {% block home %}
+    <section id="home" class="page">
+      <div class="container">
+        <div class="content cover text-center">
+          <div class="row">
+            <div class="col-lg-12">
+              <h1 class="animated hiding" data-animation="fadeInDown" data-delay="300"><span class="ahora">Ahora</span> <span class="podemos">Podemos</span> <span class="murcia">Murcia</span></h1>
+              <a class="btn btn-apm nav-external animated hiding" data-animation="fadeIn" data-delay="900" href="{% block button %}#metodo{% endblock %}">Empod&eacute;rate</a>
+              <h3 class="animated hiding" data-animation="fadeIn" data-delay="600">Un equipo para todxs.</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% endblock %}
+    <div id="navbar-top">
+      <nav class="navbar navbar-default navbar-static" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand nav-external" href="#home">Ahora Podemos Murcia</a>
+          </div>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li{% if not page %} class="active"{% endif %}>
+                <a{% if page %} class="external"{% endif %} href="{% url 'web-index' %}#home">Inicio</a>
+              </li>
+              <li>
+                <a{% if page %} class="external"{% endif %} href="{% url 'web-index' %}#metodo">M&eacute;todo</a>
+              </li>
+              <li>
+                <a{% if page %} class="external"{% endif %} href="{% url 'web-index' %}#podemos">Podemos</a>
+              </li>
+              <li>
+                <a{% if page %} class="external"{% endif %} href="{% url 'web-index' %}#municipio">Municipio</a>
+              </li>
+              <li>
+                <a{% if page %} class="external"{% endif %} href="{% url 'web-index' %}#citas">Citas</a>
+              </li>
+              <li>
+                <a{% if page %} class="external"{% endif %} href="{% url 'web-index' %}#about">Equipo</a>
+              </li>
+              <li>
+                <a{% if page %} class="external"{% endif %} href="{% url 'web-index' %}#work">Documentos</a>
+              </li>
+              <li>
+                <a{% if page %} class="external"{% endif %} href="{% url 'web-index' %}#prensa">Prensa</a>
+              </li>
+              <li{% if page = 'blog' %} class="active"{% endif %}>
+                <a class="external" href="{% url 'blog-index' %}#blog">Blog</a>
+              </li>
+              <li>
+                <a href="#contact">Contacto</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    
+    {% block content %}{% endblock %}
+    
+    <section id="contact" class="page">
+      <div class="container">
+        <div class="content cover text-center">
+          <div class="heading">
+            <h2>Contacta con nosotrxs.</h2>
+            <div class="border"></div>
+            <p>Puedes ponerte en contacto con nosotrxs a trav&eacute;s de:</p>
+          </div>
+          <div class="row">
+            <div class="col-lg-3 animated hiding" data-animation="fadeInLeft" data-delay="600">
+              <i class="fa fa-envelope fa-3x"></i>
+              <a href="mailto:info@ahorapodemosmurcia.org">info@ahorapodemosmurcia.org</a>
+            </div>
+            <div class="col-lg-3 animated hiding" data-animation="fadeInDown" data-delay="300">
+              <i class="fa fa-facebook fa-3x"></i>
+              <a href="https://www.facebook.com/ahorapodemosmurcia">Facebook</a>
+            </div>
+            <div class="col-lg-3 animated hiding" data-animation="fadeInDown" data-delay="300">
+              <i class="fa fa-twitter fa-3x"></i>
+              <a href="https://twitter.com/AhoraPodemosMu">Twitter</a>
+            </div>
+            <div class="col-lg-3 animated hiding" data-animation="fadeInLeft" data-delay="600">
+              <i class="fa fa-youtube fa-3x"></i>
+              <a href="https://www.youtube.com/channel/UChTmMjCMKEQtPV3oVRWdYxg">Canal de Youtube</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 animated hiding" data-animation="fadeInUp">
+            <p class="copyright"> 
+              Creado por <a href="http://www.ahorapodemosmurcia.org">Ahora Podemos Murcia</a> &middot; 
+              Licenciado bajo la <a href="http://www.apache.org/licenses/LICENSE-2.0">GNU General Public License v3.0</a> &middot; 
+              Basado en <a href="http://www.github.com/halibegic/Merlin">Merlin</a>  &middot; 
+              Iconos por <a href="http://fontawesome.io/">Font Awesome</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="{% static "assets/js/jquery.min.js" %}"></script>
+    <script src="{% static "assets/js/bootstrap.min.js" %}"></script>
+    <script src="{% static "assets/js/isotope.pkgd.min.js" %}"></script>
+    <script src="{% static "assets/js/imagesloaded.min.js" %}"></script>
+    <script src="{% static "assets/js/jquery.scrollTo.min.js" %}"></script>
+    <script src="{% static "assets/js/jquery.nav.min.js" %}"></script>
+    <script src="{% static "assets/js/jquery.appear.min.js" %}"></script>
+    <script src="{% static "assets/js/script.js" %}"></script>
+    <!-- Google Analytics: change UA-25089888-9 to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-57256183-1');ga('send','pageview');
+    </script>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&appId=275052237501&version=v2.0";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+  </body>
+</html>

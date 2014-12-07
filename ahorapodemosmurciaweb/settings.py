@@ -37,6 +37,10 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'web',
+    'django.contrib.sites',
+    'django_comments',
+    'ckeditor',
+    'blog'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -53,6 +57,9 @@ ROOT_URLCONF = 'ahorapodemosmurciaweb.urls'
 
 WSGI_APPLICATION = 'ahorapodemosmurciaweb.wsgi.application'
 
+SITE_ID = 1
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
 
 DATABASE_NAME = ''
 DATABASE_USER = ''
@@ -96,3 +103,5 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'

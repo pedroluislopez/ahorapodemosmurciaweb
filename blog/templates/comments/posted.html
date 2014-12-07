@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% load comments %}
+
+{% block button %}#comments{% endblock %}
+
+{% block a-menu-class %}external{% endblock %}
+
+{% block home %}{% endblock %}
+
+{% block content %}
+<section id="blog" class="page">
+  <div class="container">
+    <div class="content">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <section id="comments" class="page">
+	        <h3 class="post-comments">Gracias por comentar</h3>
+	      </section>
+	    </div>
+	  </div>
+	</div>
+  </div>
+</section>
+{% endblock %}

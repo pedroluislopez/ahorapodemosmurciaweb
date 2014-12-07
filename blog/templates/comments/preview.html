@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% load comments %}
+
+{% block button %}#comments{% endblock %}
+
+{% block a-menu-class %}external{% endblock %}
+
+{% block home %}{% endblock %}
+
+{% block content %}
+<section id="blog" class="page">
+  <div class="container">
+    <div class="content">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <section id="comments" class="page">
+	          <h3 class="post-comments">Revisar comentario</h3>
+	          {% if not form.errors %}
+	          <div class="row">
+	            <div class="col-xs-12 col-sm-6 col-md-6">
+	              <blockquote>{{ comment|linebreaks }}</blockquote>
+	              <div class="form-group">
+	                <input type="submit" name="submit" class="btn btn-block" value="Enviar comentario" />
+	              </div>	
+	            </div>
+	          </div>
+	          {% endif %}
+	          <form action="{% comment_form_target %}" method="post">
+	            {% csrf_token %}
+	            {% if next %}<input type="hidden" name="next" value="{{ next }}" />{% endif %}
+	            <div class="row">
+	              <div class="col-xs-12 col-sm-12 col-md-12 wow fadeInUp" >
+	                <div class="form-group{% if form.comment.errors %} has-error has-feedback{% endif %}">
+	                  <div class="controls">
+	                    <textarea name="{{ form.comment.name }}" placeholder="&Uacute;nete al debate ..." class="form-control input-lg requiredField" rows="3">{{ form.comment.value }}</textarea>
+	                    {% if form.comment.errors %}
+	                    <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+	                    <span id="inputError2Status" class="sr-only">(error)</span>
+	                    <span class="help-block">
+	                      {% for error in form.comment.errors %}<strong>{{ error|escape }}<br/></strong>{% endfor %}
+	                    </span>
+	                    {% endif %}
+	                  </div>
+	                </div>
+	                <div class="row">
+	                  <div class="col-xs-12 col-sm-6 col-md-6">
+	                    <div class="form-group{% if form.name.errors %} has-error has-feedback{% endif %}">
+	                      <div class="controls">
+	                        <input name="{{ form.name.name }}" placeholder="Nombre" class="form-control input-lg requiredField " type="text" value="{{ form.name.value }}">
+	                        {% if form.name.errors %}
+	                        <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+	                        <span id="inputError2Status" class="sr-only">(error)</span>
+	                        <span class="help-block">
+	                          {% for error in form.name.errors %}<strong>{{ error|escape }}<br/></strong>{% endfor %}
+	                        </span>
+	                        {% endif %}
+	                      </div>
+	                    </div>
+	                  </div>
+	                  <div class="col-xs-12 col-sm-6 col-md-6">
+	                    <div class="form-group{% if form.email.errors %} has-error has-feedback{% endif %}">
+	                      <div class=" controls">
+	                        <input name="{{ form.email.name }}" placeholder="Email" class="form-control input-lg requiredField" type="email" value="{{ form.email.value }}">
+	                        {% if form.email.errors %}
+	                        <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+	                        <span id="inputError2Status" class="sr-only">(error)</span>
+	                        <span class="help-block">
+	                          {% for error in form.email.errors %}<strong>{{ error|escape }}<br/></strong>{% endfor %}
+	                        </span>
+	                        {% endif %}
+	                      </div>
+	                    </div>	
+	                  </div>
+	                </div>	
+	                <div class="row">
+	                  <div class="col-xs-12 col-sm-6 col-md-6">
+	                    <div class="form-group{% if form.url.errors %} has-error has-feedback{% endif %}">
+	                      <div class="controls">
+	                        <input name="{{ form.url.name }}" placeholder="Sitio web" class="form-control input-lg " type="text" value="{{ form.url.value }}">
+	                        {% if form.url.errors %}
+	                        <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+	                        <span id="inputError2Status" class="sr-only">(error)</span>
+	                        <span class="help-block">
+	                          {% for error in form.url.errors %}<strong>{{ error|escape }}<br/></strong>{% endfor %}
+	                        </span>
+	                        {% endif %}
+	                      </div>
+	                    </div>
+	                  </div>
+	                  <div class="col-xs-12 col-sm-6 col-md-6">
+	                    <div class="form-group">
+	                      <input type="submit" name="submit" class="btn btn-block" value="Enviar comentario" />
+	                    </div>	
+	                  </div>	
+	                </div>	
+	              </div>
+	            </div>
+	            {% for field in form %}
+	            {% if field.is_hidden %}
+	            {{ field }}
+	            {% endif %}
+	            {% endfor %}
+	          </form>
+	      </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

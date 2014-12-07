@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% load comments %}
+
+{% block title %} {{ post.titulo }}{% endblock %}
+
+{% block button %}#blog{% endblock %}
+
+{% block a-menu-class %}external{% endblock %}
+
+{% block content %}
+<section id="blog" class="page">
+  <div class="container">
+    <div class="content">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          {% get_comment_count for blog.Publicacion post.id as comment_count %}
+          <div class="post-date">
+		    {{ post.publicado|date:"d \d\e F \d\e Y" }} <span><a href="{% url 'blog-post' post.slug %}#comments">{{ comment_count }} Comentario/s</a></span>
+		  </div>
+		  <h2 class="post-title">{{ post.titulo }}</h2>
+		  <div class="post-intro">{{ post.entradilla }}</div>
+		  {% autoescape off %}
+		  {{ post.cuerpo }}
+		  {% endautoescape %}
+		  
+		  <section id="comments" class="page">
+		      <h3 class="post-comments">{{ comment_count }} Comentario/s</h3>
+		      <hr></hr>
+		      
+		      {% get_comment_list for blog.Publicacion post.id as comment_list %}
+		      {% for c in comment_list %}
+	          <div class="media">
+	            <div class="media-body">
+	              <h4 class="media-heading">
+	                {%if c.url %}<a href="{{ c.url }}" target="blank_">{{ c.user_name }}</a>{% else %}{{ c.user_name }}{% endif %}
+	                <span>{{ c.submit_date|date:"d \d\e F \d\e Y" }}</span>
+	              </h4>
+	              <p>{{ c.comment }}</p>
+	            </div>
+	          </div>
+	          {% endfor %}
+	          
+	          <hr></hr>
+	          
+	          {% get_comment_form for post as form %}
+	          <h3 class="post-comments">A&ntilde;adir un nuevo comentario</h3>
+	          <form action="{% comment_form_target %}" method="post">
+	            {% csrf_token %}
+	            {% if next %}<input type="hidden" name="next" value="{{ next }}" />{% endif %}
+	            <div class="row">
+	              <div class="col-xs-12 col-sm-12 col-md-12 wow fadeInUp" >
+	                <div class="form-group">
+	                  <div class="controls">
+	                    <textarea name="{{ form.comment.name }}" placeholder="&Uacute;nete al debate ..." class="form-control input-lg requiredField" rows="3"></textarea>
+	                  </div>
+	                </div>
+	                <div class="row">
+	                  <div class="col-xs-12 col-sm-6 col-md-6">
+	                    <div class="form-group">
+	                      <div class="controls">
+	                        <input name="{{ form.name.name }}" placeholder="Nombre" class="form-control input-lg requiredField " type="text">
+	                      </div>
+	                    </div>
+	                  </div>
+	                  <div class="col-xs-12 col-sm-6 col-md-6">
+	                    <div class="form-group">
+	                      <div class=" controls">
+	                        <input name="{{ form.email.name }}" placeholder="Email" class="form-control input-lg requiredField" type="email">
+	                      </div>
+	                    </div>	
+	                  </div>
+	                </div>	
+	                <div class="row">
+	                  <div class="col-xs-12 col-sm-6 col-md-6">
+	                    <div class="form-group">
+	                      <div class="controls">
+	                        <input name="{{ form.url.name }}" placeholder="Sitio web" class="form-control input-lg " type="text">
+	                      </div>
+	                    </div>
+	                  </div>
+	                  <div class="col-xs-12 col-sm-6 col-md-6">
+	                    <div class="form-group">
+	                      <input type="submit" name="submit" class="btn btn-block" value="Enviar comentario" />
+	                    </div>	
+	                  </div>	
+	                </div>	
+	              </div>
+	            </div>
+	            {% for field in form %}
+	            {% if field.is_hidden %}
+	            {{ field }}
+	            {% endif %}
+	            {% endfor %}
+	          </form>
+	      </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

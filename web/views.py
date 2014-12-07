@@ -19,7 +19,7 @@ def index(request):
     candidatos = Candidato.objects.order_by('orden')
     documentos = Documento.objects.order_by('orden')
     noticias = Noticia.objects.order_by('-fecha')
-    return render(request, 'index.html', {
+    return render(request, 'web/index.html', {
         'ideasfuerza_m': ideasfuerza_m,
         'm_columns': m_columns,
         'ideasfuerza_p': ideasfuerza_p,

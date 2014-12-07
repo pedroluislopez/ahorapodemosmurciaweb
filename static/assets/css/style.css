@@ -460,3 +460,111 @@ a:focus {
   #portfolio .items li { width: 100% }
   #testimonials .quote { padding: 0 30px }
 }
+#blog a {
+	font-weight: bold;
+	color: #551645;
+	border-bottom: 1px solid rgba(198, 70, 61, 0);
+	transition: border 0.2s ease 0s;
+}
+#blog a:hover, #blog a:focus {
+	color: #551645;
+	text-decoration: underline;
+}
+#blog .content .post-date {
+    color: #9F9F9F;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    font-size: 12px;
+}
+#blog .content .post-date span {
+    float: right;
+}
+#blog article {
+    border-bottom: 1px solid #CCC;
+    margin-bottom: 1em;
+}
+#blog article .post-date {
+    margin-top: 1em;
+}
+#blog .content h2 {
+	font-size: 35px;
+}
+#blog article h2 a {
+    color: #444;
+    border: 0px none;
+}
+#blog article h2 a:hover, #blog article h2 a:focus {
+	text-decoration: none;
+}
+#blog .content p {
+    margin: 0.6em 0px 1em;
+    font-size: 18px;
+}
+#blog p {
+    border: 0px none;
+    font: inherit;
+}
+#blog .btn {
+    font-size: 13px;
+    cursor: pointer;
+    padding: 0px 26px;
+    line-height: 38px;
+    display: inline-block;
+    margin: 0px 10px 4px 0px;
+    height: 40px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: medium none;
+    position: relative;
+    background: none repeat scroll 0% 0% #076259;
+    color: #FFF;
+    border: 1px solid #076259;
+    border-radius: 4px;
+}
+
+#blog .btn:hover, #blog .btn:active, #blog .btn:focus {
+    color: #FFF;
+    top: 0px;
+    text-decoration: none;
+    background-color: #551645;
+    box-shadow: none;
+    border: 1px solid #551645;
+}
+
+#blog .paging {
+    margin-top: 2em;
+}
+
+#blog .content .post-title {
+	font-weight: bold;
+	color: #551645;
+}
+
+#blog .content .post-intro {
+    font-size: 18px;
+    font-style: italic;
+    margin: 20px 0px 28px 0px;
+}
+
+#blog .content h3.post-comments {
+	font-size: 25px;
+	font-weight: bold;
+	color: #551645;
+}
+
+#comments .media-heading {
+	font-weight: bold;
+	color: #551645;
+}
+
+#comments .media h4 span {
+    float: right;
+    font-size: 13px;
+    color: #9F9F9F;
+}
+
+#comments .media-body {
+	margin-left: 20px;
+}
