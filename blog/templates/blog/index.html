@@ -26,13 +26,13 @@
 		  </article>
 		  {% endfor %}
 		  <div class="paging clearfix">
-		    {% if num_prev %}
+		    {% if num_prev != None %}
 	        <a class="btn pull-left" href="{% url 'blog-index' num_prev %}#blog">
 	          <i class="fa fa-arrow-left fa-1x"></i>
 	          <span>Entradas recientes</span>
 	        </a>
 	        {% endif %}
-	        {% if num_next %}
+	        {% if num_next != None %}
 	        <a class="btn pull-right" href="{% url 'blog-index' num_next %}#blog">
 	          <span>Entradas antiguas</span>
 	          <i class="fa fa-arrow-right fa-1x"></i>
